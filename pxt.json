@@ -1,0 +1,36 @@
+{
+    "name": "Multi-relay",
+    "description": "Extension to control 74HC595 shift register with Microbit",
+    "files": [
+        "main.py"
+    ],
+    "dependencies": {},
+    "color": "#00008B",
+    "icon": "icon-shuffle",  // Global icon for the extension
+    "blocks": [
+        {
+            "name": "initialize shift register with latch %latch|clock %clock|data %data",
+            "callback": "shift_register_init",
+            "color": "#00008B",
+            "icon": "icon-cogs"  // Specific icon for this block
+        },
+        {
+            "name": "shift out %data",
+            "callback": "shift_register_shift_out",
+            "color": "#00008B",
+            "icon": "icon-arrow-right"  // Specific icon for this block
+        },
+        {
+            "name": "set relays %state",
+            "callback": "shift_register_set_relays",
+            "color": "#00008B",
+            "icon": "icon-power-off"  // Specific icon for this block
+        },
+        {
+            "name": "set relays from binary %binary",
+            "callback": "shift_register_set_relays_from_binary",
+            "color": "#00008B",
+            "icon": "icon-binary"  // Specific icon for this block
+        }
+    ]
+}
