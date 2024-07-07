@@ -1,6 +1,4 @@
-# ShiftRegister extension in MicroPython for Microbit
 from microbit import *
-import pxt
 
 class ShiftRegister:
     def __init__(self, latch, clock, data):
@@ -33,24 +31,19 @@ class ShiftRegister:
 
 shift_register = None
 
-@pxt.function
-def shift_register_init(latch: int, clock: int, data: int):
+def shift_register_init(latch, clock, data):
     global shift_register
-    shift_register = ShiftRegister(
-        pin_lookup(latch), pin_lookup(clock), pin_lookup(data)
-    )
+    shift_register = ShiftRegister(latch, clock, data)
 
-@pxt.function
-def shift_register_set_relays(state: int):
+def shift_register_set_relays(state):
     if shift_register is not None:
         shift_register.set_relays(state)
 
-@pxt.function
-def shift_register_set_relays_from_binary(binary: str):
+def shift_register_set_relays_from_binary(binary):
     if shift_register is not None:
         shift_register.set_relays_from_binary(binary)
 
-def pin_lookup(pin_number: int):
+def pin_lookup(pin_number):
     return {
         0: pin0,
         1: pin1,
