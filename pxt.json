@@ -2,7 +2,8 @@
     "name": "ShiftRegisterControl",
     "description": "Extension to control 74HC595 shift register with Microbit",
     "files": [
-        "main.py"
+        "main.py",
+        "main.ts"
     ],
     "dependencies": {},
     "color": "#00008B",
@@ -10,27 +11,27 @@
     "blocks": [
         {
             "name": "initialize shift register with latch %latch|clock %clock|data %data",
-            "callback": "shift_register_init",
+            "callback": "shiftregister.init",
             "color": "#00008B",
             "icon": "icon-cogs",
             "parameters": [
                 {
                     "name": "latch",
-                    "type": "number"
+                    "type": "pin"
                 },
                 {
                     "name": "clock",
-                    "type": "number"
+                    "type": "pin"
                 },
                 {
                     "name": "data",
-                    "type": "number"
+                    "type": "pin"
                 }
             ]
         },
         {
             "name": "set relays %state",
-            "callback": "shift_register_set_relays",
+            "callback": "shiftregister.setRelays",
             "color": "#00008B",
             "icon": "icon-power-off",
             "parameters": [
@@ -42,7 +43,7 @@
         },
         {
             "name": "set relays from binary %binary",
-            "callback": "shift_register_set_relays_from_binary",
+            "callback": "shiftregister.setRelaysFromBinary",
             "color": "#00008B",
             "parameters": [
                 {
