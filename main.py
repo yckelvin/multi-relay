@@ -1,6 +1,6 @@
 # ShiftRegister extension in MicroPython for Microbit
 from microbit import *
-import pxt  # Import the pxt module to expose functions to MakeCode
+import pxt
 
 class ShiftRegister:
     def __init__(self, latch, clock, data):
@@ -31,28 +31,26 @@ class ShiftRegister:
         state = int(binary_string, 2) << 27
         self.set_relays(state)
 
-# Create a global instance of ShiftRegister
 shift_register = None
 
-@pxt.function("shift_register_init")
+@pxt.function
 def shift_register_init(latch: int, clock: int, data: int):
     global shift_register
     shift_register = ShiftRegister(
         pin_lookup(latch), pin_lookup(clock), pin_lookup(data)
     )
 
-@pxt.function("shift_register_set_relays")
+@pxt.function
 def shift_register_set_relays(state: int):
     if shift_register is not None:
         shift_register.set_relays(state)
 
-@pxt.function("shift_register_set_relays_from_binary")
+@pxt.function
 def shift_register_set_relays_from_binary(binary: str):
     if shift_register is not None:
         shift_register.set_relays_from_binary(binary)
 
 def pin_lookup(pin_number: int):
-    """Helper function to map pin numbers to pin objects"""
     return {
         0: pin0,
         1: pin1,
