@@ -42,29 +42,13 @@
             ]
         },
         {
-            "name": "set relays from binary inputs b1 %b1 b2 %b2 b3 %b3 b4 %b4 b5 %b5",
-            "callback": "shiftregister.setRelaysFromBinaryInputs",
+            "name": "set relays from binary %binary",
+            "callback": "shiftregister.setRelaysFromBinary",
             "color": "#00008B",
             "parameters": [
                 {
-                    "name": "b1",
-                    "type": "number"
-                },
-                {
-                    "name": "b2",
-                    "type": "number"
-                },
-                {
-                    "name": "b3",
-                    "type": "number"
-                },
-                {
-                    "name": "b4",
-                    "type": "number"
-                },
-                {
-                    "name": "b5",
-                    "type": "number"
+                    "name": "binary",
+                    "type": "string"
                 }
             ],
             "icon": "icon-binary"
