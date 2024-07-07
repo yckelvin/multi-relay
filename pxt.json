@@ -7,7 +7,7 @@
     ],
     "dependencies": {},
     "color": "#00008B",
-    "icon": "icon-shuffle",
+    "icon": "boxes-stacked",
     "blocks": [
         {
             "name": "initialize shift register with latch %latch|clock %clock|data %data",
