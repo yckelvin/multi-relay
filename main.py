@@ -21,14 +21,6 @@ class ShiftRegister:
         self.shift_out(state)
         self.latch_pin.write_digital(1)
 
-    def set_relays_from_binary(self, binary_string):
-        if len(binary_string) != 5 or not all(c in '01' for c in binary_string):
-            raise ValueError("Input must be a 5-digit binary string")
-        
-        # Convert 5-digit binary string to 32-bit integer
-        state = int(binary_string, 2) << 27
-        self.set_relays(state)
-
 shift_register = None
 
 def shift_register_init(latch, clock, data):
@@ -38,10 +30,6 @@ def shift_register_init(latch, clock, data):
 def shift_register_set_relays(state):
     if shift_register is not None:
         shift_register.set_relays(state)
-
-def shift_register_set_relays_from_binary(binary):
-    if shift_register is not None:
-        shift_register.set_relays_from_binary(binary)
 
 def pin_lookup(pin_number):
     return {
