@@ -19,16 +19,4 @@ namespace shiftregister {
         basic.pause(100);
         control.raiseEvent(9999, 2); // Use event ID to synchronize with Python
     }
-
-    //% block="set relays from binary %binary"
-    //% binary.shadow="text" binary.defl="00000"
-    export function setRelaysFromBinary(binary: string): void {
-        if (/^[01]{5}$/.test(binary)) { // Validate the binary string to be exactly 5 characters of 0s and 1s
-            pins.digitalWritePin(DigitalPin.P16, 0); // Trigger the Python function
-            basic.pause(100);
-            control.raiseEvent(9999, 3); // Use event ID to synchronize with Python
-        } else {
-            basic.showString("Err"); // Show error on Microbit display if input is invalid
-        }
-    }
 }
