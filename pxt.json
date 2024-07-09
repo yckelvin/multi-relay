@@ -40,18 +40,6 @@
                     "type": "number"
                 }
             ]
-        },
-        {
-            "name": "set relays from binary %binary",
-            "callback": "shiftregister.setRelaysFromBinary",
-            "color": "#00008B",
-            "parameters": [
-                {
-                    "name": "binary",
-                    "type": "string"
-                }
-            ],
-            "icon": "icon-binary"
         }
     ]
 }
